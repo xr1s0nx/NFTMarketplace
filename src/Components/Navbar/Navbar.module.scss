@@ -1,0 +1,88 @@
+.navBar {
+  border-radius: 16px;
+  border: 2px solid #212554;
+  overflow: hidden;
+  position: relative;
+  transition: max-height .5s linear;
+  height: 100%;
+
+  .logo {
+    margin-bottom: 42px;
+  }
+
+  .navItem {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: .3s linear;
+    background: transparent;
+    margin-bottom: 42px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      height: 48px;
+      top: -4px;
+      width: 4px;
+      right: -2px;
+      content: '';
+      background: linear-gradient(90deg, #EC008C 0%, #FC6767 100%);
+      border-radius: 20px;
+      transition: .3s linear;
+      opacity: 0;
+    }
+
+    &.active {
+      background: #232966;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .line {
+    width: calc(100% - 16px);
+    margin: 0 auto 42px;
+    height: 2px;
+    background: #2E357B;
+  }
+
+  .logOut {
+    margin-top: 233px;
+  }
+
+  .content {
+    padding: 62px 0 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%);
+
+  }
+
+  .hideBtn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    opacity: .5;
+    transition: .3s linear;
+    top: 15px;
+    left: 20px;
+
+    &:hover {
+      opacity: 1;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}

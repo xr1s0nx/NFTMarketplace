@@ -1,0 +1,43 @@
+.inputWrap {
+  width: 449px;
+  height: 56px;
+  background: linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%);
+  border-radius: 16px;
+  padding-left: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 2px solid #212554;
+
+  .input {
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+
+    path {
+      opacity: .5;
+      transition: .3s linear;
+    }
+  }
+
+  &:focus-within {
+    .icon path {
+      opacity: .8;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.topSellers {
+  margin-bottom: 40px;
+
+  .title {
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #6EE7B7;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 16px;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #161A42;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #2193B0;
+      border-radius: 20px;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: #2193B0 #161A42;
+
+    .seller {
+      margin-left: 65px;
+      display: flex;
+      align-items: center;
+
+      .avatarWrap {
+        border-radius: 12px;
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        margin-right: 12px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .info {
+        .usernameBlock {
+          display: flex;
+          align-items: center;
+
+          .username {
+            margin-right: 6px;
+            font-family: 'Poppins';
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+          }
+        }
+
+        .sellBalance {
+          font-family: 'Quicksand';
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 20px;
+          color: #5EEAD4;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

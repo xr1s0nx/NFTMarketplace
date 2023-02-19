@@ -5,33 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21350c7-5f07-40b6-9219-10d63c6658d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/Main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/declaration.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +80,7 @@
       <workItem from="1676563979750" duration="41000" />
       <workItem from="1676646699983" duration="2772000" />
       <workItem from="1676722429301" duration="3054000" />
-      <workItem from="1676735585781" duration="7054000" />
+      <workItem from="1676735585781" duration="17587000" />
     </task>
     <servers />
   </component>

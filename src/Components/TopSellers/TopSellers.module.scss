@@ -34,9 +34,10 @@
     scrollbar-color: #2193B0 #161A42;
 
     .seller {
-      margin-left: 65px;
-      display: flex;
+      margin-left: 60px;
       align-items: center;
+      min-width: content-box;
+      display: flex;
 
       .avatarWrap {
         border-radius: 12px;
@@ -46,7 +47,7 @@
         margin-right: 12px;
 
         img {
-          width: 100%;
+          width: 60px;
           height: 100%;
         }
       }
@@ -63,6 +64,9 @@
             font-size: 16px;
             line-height: 24px;
             color: #FFFFFF;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
 

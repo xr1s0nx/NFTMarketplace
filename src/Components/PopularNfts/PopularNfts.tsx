@@ -1,12 +1,20 @@
 import React from 'react';
 import styles from './PopularNfts.module.scss';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../Redux/store";
 import {NavLink} from "react-router-dom";
+import {popularTimerStart} from "../../Redux/Slices/MainSlice";
 
 function PopularNfts() {
 
     const nfts = useSelector((state: RootState) => state.MainSlice.popularNFTS);
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        setInterval(() => {
+            dispatch(popularTimerStart());
+        }, 1000)
+    }, [])
 
     return (
         <div className={styles.popularNfts}>

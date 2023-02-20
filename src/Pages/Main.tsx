@@ -3,6 +3,7 @@ import PopularNfts from "../Components/PopularNfts/PopularNfts";
 import TopSellers from "../Components/TopSellers/TopSellers";
 import {useSelector} from "react-redux";
 import {RootState} from "../Redux/store";
+import HotBids from "../Components/HotBids/HotBids";
 
 function Main() {
 
@@ -15,6 +16,7 @@ function Main() {
                 : null
             }
             <TopSellers/>
+            <HotBids/>
         </div>
     );
 }

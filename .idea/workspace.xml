@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21350c7-5f07-40b6-9219-10d63c6658d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HotBids/HotBids.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +90,10 @@
       <workItem from="1676836523266" duration="591000" />
       <workItem from="1676898991822" duration="609000" />
       <workItem from="1676901500590" duration="7211000" />
-      <workItem from="1676927168835" duration="2950000" />
+      <workItem from="1676927168835" duration="3395000" />
+      <workItem from="1676974900403" duration="4263000" />
+      <workItem from="1676988638562" duration="2692000" />
+      <workItem from="1676996636809" duration="3700000" />
     </task>
     <servers />
   </component>

@@ -17,7 +17,7 @@
     overflow-x: auto;
 
     .bid {
-      width: 188px;
+      width: calc(100% /6 - 30px);
       .top {
         display: flex;
         align-items: center;
@@ -56,13 +56,14 @@
         z-index: 10;
         overflow: hidden;
         border-radius: 12px;
-        width: 188px;
+        width: 100%;
         display: block;
-        height: 188px;
         margin-bottom: 15px;
+        height: fit-content;
 
         img {
           transition: .2s linear;
+          width: 100%;
         }
 
         &:hover {

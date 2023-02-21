@@ -1,4 +1,16 @@
 .profile {
+  margin-left: 100px;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(90deg, #9796F0 0%, #FBC7D4 100%);
+    border-radius: 100px;
+    top: 2px;
+    left: -40px;
+  }
   .content {
     max-width: 310px;
     width: 100%;
@@ -57,7 +69,12 @@
     .settingsBtn {
       margin-left: 60px;
       transition: .3s linear;
+      transform: rotate(90deg);
       opacity: .5;
+
+      &.active {
+        transform: rotate(-90deg);
+      }
 
       &:hover {
         opacity: 1;

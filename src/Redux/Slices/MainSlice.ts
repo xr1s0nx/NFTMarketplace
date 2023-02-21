@@ -29,6 +29,12 @@ interface MainState {
         username: string,
         avatarUrl: string | null,
         likeBids: number[],
+        stats: {
+            asset: number,
+            followers: number,
+            likes: number,
+            bidding: number,
+        }
     },
     hasNotice: boolean
     popularNFTS: {
@@ -64,16 +70,24 @@ interface MainState {
         }[] | null,
         imageUrl: string,
     }[] | undefined,
+    profileCardOpen: boolean,
 }
 
 const initialState: MainState = {
     searchValue: '',
+    profileCardOpen: true,
     profile: {
         email: 'artem.gumerov.05@gmail.com',
         balance: 3.5,
         username: 'xr1s0nx',
         avatarUrl: 'https://i.pinimg.com/736x/ef/cb/5a/efcb5aff8710f5fb321065027cb149b2.jpg',
         likeBids: [1, 3, 6],
+        stats: {
+            asset: 120,
+            followers: 10050,
+            likes: 70512,
+            bidding: 60,
+        }
     },
     hasNotice: true,
     popularNFTS: [
@@ -396,10 +410,13 @@ export const mainSlice = createSlice({
                     return null;
                 })
             }
+        },
+        profileCardOpenToggle: (state) => {
+            state.profileCardOpen = !state.profileCardOpen;
         }
     },
 })
 
-export const { changeSearchValue, likeBid, unlike, bidsTimerStart, popularTimerStart,  } = mainSlice.actions
+export const { changeSearchValue, likeBid, unlike, bidsTimerStart, popularTimerStart, profileCardOpenToggle,  } = mainSlice.actions
 
 export default mainSlice.reducer

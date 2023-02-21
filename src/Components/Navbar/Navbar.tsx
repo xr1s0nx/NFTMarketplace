@@ -46,10 +46,10 @@ function Navbar() {
                 {navLinks.map((link, i) => {
                     return (
                         link.type === 'link' ?
-                            <NavLink key={link.link + i + link.img} to={link.link} className={({isActive}) => isActive ? `${styles.navItem} ${styles.active}` : styles.navItem}>
+                            <NavLink key={i} to={link.link} className={({isActive}) => isActive ? `${styles.navItem} ${styles.active}` : styles.navItem}>
                                 <img src={link.img} alt=""/>
                             </NavLink> :
-                            <span className={styles.line}></span>
+                            <span key={i} className={styles.line}></span>
                     )
                 })}
                 <button className={styles.logOut}>

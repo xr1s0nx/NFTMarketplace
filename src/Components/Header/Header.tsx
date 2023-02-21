@@ -15,10 +15,10 @@ function Header() {
             <div className={styles.content}>
                 <HeaderSearch/>
                 {profile ?
-                    <>
+                    <div className={styles.profile}>
                         <HeaderButtons balance={profile.balance}/>
                         <HeaderProfile avatarUrl={profile.avatarUrl} email={profile.email} username={profile.username}/>
-                    </>
+                    </div>
                     : null}
             </div>
         </header>

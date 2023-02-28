@@ -3,7 +3,7 @@ import styles from './HeaderButtons.module.scss';
 import {useSelector} from "react-redux";
 import {RootState} from "../../Redux/store";
 
-function HeaderButtons({balance}: {balance: number}) {
+function HeaderButtons({balance}: {balance?: number}) {
 
     const hasNotice = useSelector((state: RootState) => state.MainSlice.hasNotice);
 

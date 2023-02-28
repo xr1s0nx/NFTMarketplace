@@ -12,7 +12,7 @@ function ProfileCard() {
 
     return (
         <>
-            {profile ?
+            {profile && profile.stats ?
                 <div className={styles.profileCard}>
                     <span className={styles.bg}>
                         <img src={bg} alt=""/>

@@ -24,12 +24,12 @@ import hotBids6 from '../../assets/img/hot-bids6.jpg';
 interface MainState {
     searchValue: string,
     profile?: {
-        email: string,
-        balance: number,
-        username: string,
-        avatarUrl: string | null,
-        likeBids: number[],
-        stats: {
+        email?: string,
+        balance?: number,
+        username?: string,
+        avatarUrl?: string | null,
+        likeBids?: number[],
+        stats?: {
             asset: number,
             followers: number,
             likes: number,
@@ -71,24 +71,31 @@ interface MainState {
         imageUrl: string,
     }[] | undefined,
     profileCardOpen: boolean,
+    isAuth: boolean,
+    SignModalOpen: boolean,
+    loginInput: string,
+    passwordInput: string,
+    confirmPasswordInput: string
 }
 
 const initialState: MainState = {
+    SignModalOpen: false,
+    isAuth: true,
     searchValue: '',
-    profileCardOpen: true,
-    profile: {
-        email: 'artem.gumerov.05@gmail.com',
-        balance: 3.5,
-        username: 'xr1s0nx',
-        avatarUrl: 'https://i.pinimg.com/736x/ef/cb/5a/efcb5aff8710f5fb321065027cb149b2.jpg',
-        likeBids: [1, 3, 6],
-        stats: {
-            asset: 120,
-            followers: 10050,
-            likes: 70512,
-            bidding: 60,
-        }
-    },
+    profileCardOpen: false,
+    // profile: {
+    //     email: 'artem.gumerov.05@gmail.com',
+    //     balance: 3.5,
+    //     username: 'xr1s0nx',
+    //     avatarUrl: 'https://i.pinimg.com/736x/ef/cb/5a/efcb5aff8710f5fb321065027cb149b2.jpg',
+    //     likeBids: [1, 3, 6],
+    //     stats: {
+    //         asset: 120,
+    //         followers: 10050,
+    //         likes: 70512,
+    //         bidding: 60,
+    //     }
+    // },
     hasNotice: true,
     popularNFTS: [
         {
@@ -327,7 +334,11 @@ const initialState: MainState = {
             ],
             imageUrl: hotBids6
         }
-    ]
+    ],
+    loginInput: '',
+    passwordInput: '',
+    confirmPasswordInput: '',
+
 }
 
 export const mainSlice = createSlice({
@@ -345,7 +356,10 @@ export const mainSlice = createSlice({
                     }
                     return null;
                 })
-                state.profile.likeBids.push(action.payload);
+                if(state.profile.likeBids) {
+                    state.profile.likeBids.push(action.payload);
+                }
+
             }
         },
         unlike: (state, action:PayloadAction<number>) => {
@@ -356,7 +370,9 @@ export const mainSlice = createSlice({
                     }
                     return null;
                 })
-                state.profile.likeBids = state.profile.likeBids.filter(item => item !== action.payload)
+                if(state.profile.likeBids) {
+                    state.profile.likeBids = state.profile.likeBids.filter(item => item !== action.payload)
+                }
             }
         },
         bidsTimerStart: (state) => {
@@ -413,10 +429,27 @@ export const mainSlice = createSlice({
         },
         profileCardOpenToggle: (state) => {
             state.profileCardOpen = !state.profileCardOpen;
+        },
+        toggleSingModalOpenStatus: (state) => {
+            state.SignModalOpen = !state.SignModalOpen;
+        },
+        changeLoginInput: (state, action: PayloadAction<string>) => {
+            state.loginInput = action.payload;
+        },
+        changePasswordInput: (state, action: PayloadAction<string>) => {
+            state.passwordInput = action.payload;
+        },
+        changeConfirmPasswordInput: (state, action: PayloadAction<string>) => {
+            state.confirmPasswordInput = action.payload;
         }
     },
 })
 
-export const { changeSearchValue, likeBid, unlike, bidsTimerStart, popularTimerStart, profileCardOpenToggle,  } = mainSlice.actions
+export const {
+    changeSearchValue, likeBid,
+    unlike, bidsTimerStart,
+    popularTimerStart, profileCardOpenToggle,
+    toggleSingModalOpenStatus, changeLoginInput,
+    changePasswordInput, changeConfirmPasswordInput } = mainSlice.actions
 
 export default mainSlice.reducer

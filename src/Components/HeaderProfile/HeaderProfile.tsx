@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../Redux/store";
 import {profileCardOpenToggle} from "../../Redux/Slices/MainSlice";
 
-function HeaderProfile({avatarUrl, username, email}: {avatarUrl: string | null, username: string, email: string}) {
+function HeaderProfile({avatarUrl, username, email}: {avatarUrl?: string | null, username?: string, email?: string}) {
 
     const profileCardOpen = useSelector((state: RootState) => state.MainSlice.profileCardOpen);
     const dispatch = useDispatch();

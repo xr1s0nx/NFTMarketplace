@@ -38,7 +38,7 @@ function HotBids() {
                                     <div className={styles.likesBlock}>
                                         <p className={styles.likes}>{item.likes}</p>
                                         {
-                                            profile ?
+                                            profile && profile.likeBids ?
                                                 profile.likeBids.some(id => id === item.id) ?
                                                     <button className={styles.like} onClick={() => dispatch(unlike(item.id))}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">

@@ -1,11 +1,26 @@
 import React from 'react';
 import styles from './HeaderButtons.module.scss';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../Redux/store";
+import {setNoticeStatus} from "../../Redux/Slices/MainSlice";
 
 function HeaderButtons({balance}: {balance?: number}) {
 
-    const hasNotice = useSelector((state: RootState) => state.MainSlice.hasNotice);
+    const {hasNotice, profile} = useSelector((state: RootState) => state.MainSlice);
+    const dispatch = useDispatch();
+
+
+    React.useEffect(() => {
+        const setNotice = () => {
+            dispatch(setNoticeStatus(!!profile.notice?.length))
+        }
+        setNotice();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [profile.notice])
+
+    const openNoticeMenu = () => {
+        dispatch(setNoticeStatus(false))
+    }
 
     return (
         <div className={styles.buttons}>
@@ -22,7 +37,7 @@ function HeaderButtons({balance}: {balance?: number}) {
                 </span>
                 <p className={styles.balanceText}>{balance} ETH</p>
             </div>
-            <button className={hasNotice ? `${styles.notification} ${styles.hasNotice}` : styles.notification}>
+            <button className={hasNotice ? `${styles.notification} ${styles.hasNotice}` : styles.notification} onClick={openNoticeMenu}>
                 <div className={styles.icon}>
                     <span className={styles.dot}></span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">

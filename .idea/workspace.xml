@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21350c7-5f07-40b6-9219-10d63c6658d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/SignModal/SignModal.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/SignModal/SignModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/LoadingScreen/LoadingScreen.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/LoadingScreen/LoadingScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/LogoutModal/LogoutModal.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/LogoutModal/LogoutModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/firebase.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignModal/SignModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignModal/SignModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -98,7 +102,10 @@
       <workItem from="1677074679498" duration="1484000" />
       <workItem from="1677426148221" duration="8243000" />
       <workItem from="1677579912439" duration="2906000" />
-      <workItem from="1677604086864" duration="839000" />
+      <workItem from="1677604086864" duration="3274000" />
+      <workItem from="1677677407412" duration="3057000" />
+      <workItem from="1677687424741" duration="1781000" />
+      <workItem from="1677864715312" duration="11744000" />
     </task>
     <servers />
   </component>

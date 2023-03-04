@@ -23,7 +23,7 @@ import hotBids6 from '../../assets/img/hot-bids6.jpg';
 
 interface MainState {
     searchValue: string,
-    profile?: {
+    profile: {
         email?: string,
         balance?: number,
         username?: string,
@@ -34,7 +34,8 @@ interface MainState {
             followers: number,
             likes: number,
             bidding: number,
-        }
+        },
+        notice?: {From: string, Message: string}[]
     },
     hasNotice: boolean
     popularNFTS: {
@@ -75,27 +76,16 @@ interface MainState {
     SignModalOpen: boolean,
     loginInput: string,
     passwordInput: string,
-    confirmPasswordInput: string
+    confirmPasswordInput: string,
+    logoutModalStatus: boolean,
 }
 
 const initialState: MainState = {
     SignModalOpen: false,
-    isAuth: true,
+    isAuth: false,
     searchValue: '',
     profileCardOpen: false,
-    // profile: {
-    //     email: 'artem.gumerov.05@gmail.com',
-    //     balance: 3.5,
-    //     username: 'xr1s0nx',
-    //     avatarUrl: 'https://i.pinimg.com/736x/ef/cb/5a/efcb5aff8710f5fb321065027cb149b2.jpg',
-    //     likeBids: [1, 3, 6],
-    //     stats: {
-    //         asset: 120,
-    //         followers: 10050,
-    //         likes: 70512,
-    //         bidding: 60,
-    //     }
-    // },
+    profile: {},
     hasNotice: true,
     popularNFTS: [
         {
@@ -338,8 +328,9 @@ const initialState: MainState = {
     loginInput: '',
     passwordInput: '',
     confirmPasswordInput: '',
-
+    logoutModalStatus: false,
 }
+
 
 export const mainSlice = createSlice({
     name: 'counter',
@@ -349,7 +340,7 @@ export const mainSlice = createSlice({
             state.searchValue = action.payload;
         },
         likeBid: (state, action:PayloadAction<number>) => {
-            if(state.profile && state.hotBids) {
+            if(!!Object.keys(state.profile).length && state.hotBids) {
                 state.hotBids.map(item => {
                     if(item.id === action.payload) {
                         item.likes++
@@ -359,7 +350,8 @@ export const mainSlice = createSlice({
                 if(state.profile.likeBids) {
                     state.profile.likeBids.push(action.payload);
                 }
-
+            } else {
+                state.SignModalOpen = true;
             }
         },
         unlike: (state, action:PayloadAction<number>) => {
@@ -441,6 +433,20 @@ export const mainSlice = createSlice({
         },
         changeConfirmPasswordInput: (state, action: PayloadAction<string>) => {
             state.confirmPasswordInput = action.payload;
+        },
+        setUser: (state, action:PayloadAction<{username?: string, email?: string} | undefined>) => {
+            if(action.payload) {
+                state.profile = {...action.payload}
+            }
+        },
+        setAuth: (state, action:PayloadAction<boolean>) => {
+            state.isAuth = action.payload;
+        },
+        changeLogoutModalStatus: (state, action:PayloadAction<boolean>) => {
+            state.logoutModalStatus = action.payload;
+        },
+        setNoticeStatus: (state, action: PayloadAction<boolean>) => {
+            state.hasNotice = action.payload;
         }
     },
 })
@@ -450,6 +456,9 @@ export const {
     unlike, bidsTimerStart,
     popularTimerStart, profileCardOpenToggle,
     toggleSingModalOpenStatus, changeLoginInput,
-    changePasswordInput, changeConfirmPasswordInput } = mainSlice.actions
+    changePasswordInput, changeConfirmPasswordInput,
+    setUser, setAuth,
+    changeLogoutModalStatus, setNoticeStatus,
+    } = mainSlice.actions
 
 export default mainSlice.reducer

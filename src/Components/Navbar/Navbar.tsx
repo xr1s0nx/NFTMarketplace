@@ -11,6 +11,9 @@ import wallet from '../../assets/img/Icon - Wallet.svg';
 import friends from '../../assets/img/Icon - Friends.svg';
 import settings from '../../assets/img/Icon - Settings.svg';
 import logout from '../../assets/img/Icon - Log Out.svg';
+import {changeLogoutModalStatus} from "../../Redux/Slices/MainSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../Redux/store";
 
 function Navbar() {
 
@@ -18,18 +21,16 @@ function Navbar() {
         {type: 'link', img: main, link: '/'},
         {type: 'link', img: messages, link: '/messages'},
         {type: 'link', img: cart, link: '/cart'},
-        {type: 'link', img: analytics, link: '/analytics'},
-        {type: 'link', img: history, link: '/history'},
-        {type: 'line', img: '', link: ''},
-        {type: 'link', img: wallet, link: '/wallet'},
-        {type: 'link', img: friends, link: '/friends'},
-        {type: 'link', img: settings, link: '/settings'},
     ]
 
     const [hideBar, changeVisible] = React.useState(true);
 
+    const {isAuth} = useSelector((state: RootState) => state.MainSlice);
+
+    const dispatch = useDispatch();
+
     return (
-        <div className={styles.navBar} style={{maxHeight: hideBar ? '140px' : '1195px'}}>
+        <div className={styles.navBar} style={{maxHeight: hideBar ? '140px' : '746px'}}>
             <button onClick={() => {
                 changeVisible(!hideBar);
             }} className={styles.hideBtn} style={{transform: hideBar ? 'rotate(180deg)' : 'rotate(0deg)'}}>
@@ -52,9 +53,14 @@ function Navbar() {
                             <span key={i} className={styles.line}></span>
                     )
                 })}
-                <button className={styles.logOut}>
-                    <img src={logout} alt=""/>
-                </button>
+                {isAuth ?
+                    <button className={styles.logOut} onClick={() => {
+                        dispatch(changeLogoutModalStatus(true))
+                    }}>
+                        <img src={logout} alt=""/>
+                    </button> : null
+                }
+
             </div>
         </div>
     );

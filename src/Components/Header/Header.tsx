@@ -18,7 +18,7 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.content}>
                 <HeaderSearch/>
-                {profile && isAuth ?
+                {!!Object.keys(profile).length && isAuth ?
                     <div className={styles.profile}>
                         <HeaderButtons balance={profile.balance}/>
                         <HeaderProfile avatarUrl={profile.avatarUrl} email={profile.email} username={profile.username}/>

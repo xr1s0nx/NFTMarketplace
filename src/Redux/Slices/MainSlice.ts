@@ -24,10 +24,11 @@ import hotBids6 from '../../assets/img/hot-bids6.jpg';
 interface MainState {
     searchValue: string,
     profile: {
+        uid?: string,
         email?: string,
         balance?: number,
         username?: string,
-        avatarUrl?: string | null,
+        imgUrl?: string | null,
         likeBids?: number[],
         stats?: {
             asset: number,
@@ -35,7 +36,11 @@ interface MainState {
             likes: number,
             bidding: number,
         },
-        notice?: {From: string, Message: string}[]
+        newNotice?: {From: string, Message: string}[],
+        readNotice?: {From: string, Message: string}[],
+        verified?: boolean,
+        admin?: boolean,
+
     },
     hasNotice: boolean
     popularNFTS: {
@@ -78,15 +83,19 @@ interface MainState {
     passwordInput: string,
     confirmPasswordInput: string,
     logoutModalStatus: boolean,
+    newUsername?: string,
+    AvatarModalStatus: boolean,
 }
 
 const initialState: MainState = {
+    AvatarModalStatus: false,
     SignModalOpen: false,
+    newUsername: '',
     isAuth: false,
     searchValue: '',
     profileCardOpen: false,
     profile: {},
-    hasNotice: true,
+    hasNotice: false,
     popularNFTS: [
         {
             id: 1,
@@ -447,6 +456,12 @@ export const mainSlice = createSlice({
         },
         setNoticeStatus: (state, action: PayloadAction<boolean>) => {
             state.hasNotice = action.payload;
+        },
+        changeNewUsername: (state, action: PayloadAction<string | undefined>) => {
+            state.newUsername = action.payload;
+        },
+        changeAvatarModalStatus: (state, action:PayloadAction<boolean>) => {
+            state.AvatarModalStatus = action.payload;
         }
     },
 })
@@ -459,6 +474,7 @@ export const {
     changePasswordInput, changeConfirmPasswordInput,
     setUser, setAuth,
     changeLogoutModalStatus, setNoticeStatus,
+    changeNewUsername, changeAvatarModalStatus,
     } = mainSlice.actions
 
 export default mainSlice.reducer

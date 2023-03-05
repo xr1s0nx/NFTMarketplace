@@ -60,19 +60,22 @@ function SignModal() {
             if(user !== null) {
                 try {
                     await setDoc(doc(db, 'Users', `${user.user.uid}`), {
+                        uid: user.user.uid,
                         username: `user-${user.user.uid.substr(0, 6)}`,
                         imgUrl: null,
-                        role: 'user',
                         email: loginInput,
                         balance: 0,
                         likeBids: [],
+                        verified: false,
+                        admin: false,
                         stats: {
                             asset: 0,
                             followers: 0,
                             likes: 0,
                             bidding: 0,
                         },
-                        notice: []
+                        newNotice: [{From: 'System', Message: 'Registration successfully complete!'}],
+                        readNotice: []
                     });
                 } catch (e) {
                     console.log(e);

@@ -11,36 +11,38 @@ import SignModal from "./Components/SignModal/SignModal";
 import { AnimatePresence } from "framer-motion"
 import {onAuthStateChanged} from 'firebase/auth';
 import {auth, db} from "./firebase";
-import {doc, getDoc} from "firebase/firestore";
+import {doc} from "firebase/firestore";
 import {setAuth, setUser} from "./Redux/Slices/MainSlice";
 import LogoutModal from "./Components/LogoutModal/LogoutModal";
 import LoadingScreen from "./Components/LoadingScreen/LoadingScreen";
 import {motion} from "framer-motion";
+import {onSnapshot} from 'firebase/firestore';
+import ChangeAvatarModal from "./Components/ChangeAvatarModal/ChangeAvatarModal";
 
 function App() {
 
     const modalSignOpen = useSelector((state: RootState) => state.MainSlice.SignModalOpen);
-    const {logoutModalStatus, profile, profileCardOpen, isAuth} = useSelector((state: RootState) => state.MainSlice);
+    const {logoutModalStatus, profile, profileCardOpen, AvatarModalStatus} = useSelector((state: RootState) => state.MainSlice);
     const dispatch = useDispatch();
 
     const [isLoading, setLoading]: [isLoading: boolean, setLoading: Function] = React.useState(true);
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
-        console.log(isAuth);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     onAuthStateChanged(auth, (currentUser) => {
         if(currentUser !== null && !Object.keys(profile).length) {
             setLoading(true);
-            getDoc(doc(db, 'Users', `${currentUser.uid}`)).then((data) => {
-                const userdata = data.data();
+            onSnapshot(doc(db, 'Users', currentUser.uid), (doc) => {
+                const userdata = doc.data();
                 if(userdata) {
                     dispatch(setUser(userdata));
                     dispatch(setAuth(true));
                 }
                 setLoading(false)
-            });
+            })
         } else if(isLoading) {
             setLoading(false)
         }
@@ -59,6 +61,7 @@ function App() {
                   <AnimatePresence>
                       {modalSignOpen ? <SignModal/> : null}
                       {logoutModalStatus ? <LogoutModal/> : null}
+                      {AvatarModalStatus ? <ChangeAvatarModal/> : null}
                   </AnimatePresence>
 
                   <div className="container">

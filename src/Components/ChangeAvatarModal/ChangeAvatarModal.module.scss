@@ -1,0 +1,25 @@
+.changeAvatar {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.41);
+  z-index: 1000;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  .content {
+    width: 100%;
+    min-height: 200px;
+    background: #0B0D21;
+    max-width: 600px;
+    border-radius: 15px;
+    border: 2px solid #2E357B;
+    position: relative;
+    cursor: default;
+    padding: 40px 20px;
+  }
+}

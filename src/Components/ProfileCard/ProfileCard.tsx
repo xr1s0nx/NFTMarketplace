@@ -6,9 +6,8 @@ import defaultAvatar from '../../assets/img/defaultAvatar.png';
 import bg from '../../assets/img/profile-card-bg.png';
 import {doc, updateDoc} from 'firebase/firestore';
 import {db, storage} from '../../firebase';
-import {v4} from 'uuid';
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import {changeAvatarModalStatus, changeNewUsername} from "../../Redux/Slices/MainSlice";
+import { getDownloadURL, ref, uploadBytes, deleteObject } from "firebase/storage";
+import {changeNewUsername} from "../../Redux/Slices/MainSlice";
 
 function ProfileCard() {
 
@@ -16,7 +15,7 @@ function ProfileCard() {
     const dispatch = useDispatch();
 
     const [changeUsernameInput, setActiveUsernameInput] = React.useState(false);
-    const [image, setImage]: any = React.useState();
+    const [image]: any = React.useState();
 
     const updateUsername = async () => {
         if(newUsername && newUsername.length > 0 && newUsername !== profile.username) {
@@ -24,16 +23,20 @@ function ProfileCard() {
             await updateDoc(userDoc, {...profile, username: newUsername});
         }
         setActiveUsernameInput(false);
+
     }
 
     const setAvatarImage = async (e: any) => {
         const image = e.target.files[0];
         if(image !== null) {
-            const imageRef = ref(storage, `usersAvatars/${image.name + v4()}`);
+            const imageRef = ref(storage, `usersAvatars/${profile.uid}`);
+            if(profile.imgUrl !== null) {
+                await deleteObject(imageRef);
+            }
             await uploadBytes(imageRef, image).then((response) => {
                 getDownloadURL(response.ref).then( async (url) => {
                     const userDoc = doc(db, 'Users', `${profile.uid}`);
-                    await updateDoc(userDoc, {...profile, imgUrl: url})
+                    await updateDoc(userDoc, {...profile, imgUrl: url});
                 });
             });
         }

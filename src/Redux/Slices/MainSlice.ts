@@ -4,14 +4,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import banner1 from '../../assets/img/popularNftBanner1.jpg';
 import banner2 from '../../assets/img/popularNftBanner2.jpg';
 
-// Top seller avatars
-import topSeller1 from '../../assets/img/top-seller1.png';
-import topSeller2 from '../../assets/img/top-seller2.png';
-import topSeller3 from '../../assets/img/top-seller3.png';
-import topSeller4 from '../../assets/img/top-seller4.png';
-import topSeller5 from '../../assets/img/top-seller5.png';
-import topSeller6 from '../../assets/img/top-seller6.png';
-
 // Hot Bids Images
 import hotBids1 from '../../assets/img/hot-bids1.jpg';
 import hotBids2 from '../../assets/img/hot-bids2.jpg';
@@ -23,6 +15,7 @@ import hotBids6 from '../../assets/img/hot-bids6.jpg';
 
 interface MainState {
     searchValue: string,
+    timersStart: boolean,
     profile: {
         uid?: string,
         email?: string,
@@ -57,8 +50,9 @@ interface MainState {
         username: string,
         id: number,
         avatarUrl: string,
-        partner: boolean,
+        verified: boolean,
         totalSellBalance: number,
+        admin: boolean
     }[] | undefined,
     hotBids?: {
         id: number,
@@ -119,62 +113,6 @@ const initialState: MainState = {
         },
     ],
     topSellers: [
-        {
-            username: 'dicar',
-            id: 1,
-            avatarUrl: topSeller1,
-            partner: true,
-            totalSellBalance: 232.102
-        },
-        {
-            username: 'astroo2',
-            id: 2,
-            avatarUrl: topSeller2,
-            partner: true,
-            totalSellBalance: 172.023
-        },
-        {
-            username: 'micle',
-            id: 3,
-            avatarUrl: topSeller3,
-            partner: false,
-            totalSellBalance: 92.002
-        },
-        {
-            username: '11 eror D',
-            id: 4,
-            avatarUrl: topSeller4,
-            partner: false,
-            totalSellBalance: 92.002
-        },
-        {
-            username: 'astroo2',
-            id: 5,
-            avatarUrl: topSeller5,
-            partner: true,
-            totalSellBalance: 172.023
-        },
-        {
-            username: 'astroo2',
-            id: 6,
-            avatarUrl: topSeller6,
-            partner: true,
-            totalSellBalance: 172.023
-        },
-        {
-            username: 'astroo2',
-            id: 7,
-            avatarUrl: topSeller6,
-            partner: true,
-            totalSellBalance: 172.023
-        },
-        {
-            username: 'astroo2',
-            id: 8,
-            avatarUrl: topSeller6,
-            partner: true,
-            totalSellBalance: 172.023
-        },
     ],
     hotBids: [
         {
@@ -338,6 +276,7 @@ const initialState: MainState = {
     passwordInput: '',
     confirmPasswordInput: '',
     logoutModalStatus: false,
+    timersStart: false,
 }
 
 
@@ -363,7 +302,7 @@ export const mainSlice = createSlice({
                 state.SignModalOpen = true;
             }
         },
-        unlike: (state, action:PayloadAction<number>) => {
+        unlikeBid: (state, action:PayloadAction<number>) => {
             if(state.profile && state.hotBids) {
                 state.hotBids.map(item => {
                     if(item.id === action.payload) {
@@ -401,6 +340,7 @@ export const mainSlice = createSlice({
                    return null;
                })
             }
+            state.timersStart = true;
         },
         popularTimerStart: (state) => {
             if(state.popularNFTS) {
@@ -462,19 +402,30 @@ export const mainSlice = createSlice({
         },
         changeAvatarModalStatus: (state, action:PayloadAction<boolean>) => {
             state.AvatarModalStatus = action.payload;
+        },
+        setTopSellers: (state, action: PayloadAction<{
+            username: string,
+            id: number,
+            avatarUrl: string,
+            verified: boolean,
+            totalSellBalance: number,
+            admin: boolean
+        }[]>) => {
+            state.topSellers = [...action.payload]
         }
     },
 })
 
 export const {
     changeSearchValue, likeBid,
-    unlike, bidsTimerStart,
+    unlikeBid, bidsTimerStart,
     popularTimerStart, profileCardOpenToggle,
     toggleSingModalOpenStatus, changeLoginInput,
     changePasswordInput, changeConfirmPasswordInput,
     setUser, setAuth,
     changeLogoutModalStatus, setNoticeStatus,
     changeNewUsername, changeAvatarModalStatus,
+    setTopSellers
     } = mainSlice.actions
 
 export default mainSlice.reducer

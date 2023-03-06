@@ -75,12 +75,12 @@ function App() {
                                   <Route element={<Main/>} path={'/'}/>
                               </Routes>
                           </div>
-                          <AnimatePresence>
+                          <AnimatePresence mode={'wait'}>
                               {profile && profileCardOpen?
                                   <motion.div
                                       initial={{opacity: 0}}
                                       animate={{opacity: 1}}
-                                      transition={{duration: 0.3, delay: 0.2}}
+                                      transition={{duration: 0.3, delay: 0.15}}
                                       className="profile">
                                       <ProfileCard/>
                                   </motion.div>

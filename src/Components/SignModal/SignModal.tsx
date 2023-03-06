@@ -75,7 +75,8 @@ function SignModal() {
                             bidding: 0,
                         },
                         newNotice: [{From: 'System', Message: 'Registration successfully complete!'}],
-                        readNotice: []
+                        readNotice: [],
+                        sellBalance: 0
                     });
                 } catch (e) {
                     console.log(e);

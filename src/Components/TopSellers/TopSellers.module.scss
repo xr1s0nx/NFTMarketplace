@@ -40,7 +40,7 @@
       display: flex;
 
       .avatarWrap {
-        border-radius: 12px;
+        border-radius: 100%;
         width: 60px;
         height: 60px;
         overflow: hidden;
@@ -56,6 +56,10 @@
         .usernameBlock {
           display: flex;
           align-items: center;
+
+          svg {
+            width: 25px;
+          }
 
           .username {
             margin-right: 6px;

@@ -8,12 +8,15 @@ import {popularTimerStart} from "../../Redux/Slices/MainSlice";
 function PopularNfts() {
 
     const nfts = useSelector((state: RootState) => state.MainSlice.popularNFTS);
+    const timerStart = useSelector((state: RootState) => state.MainSlice.timersStart);
     const dispatch = useDispatch();
 
     React.useEffect(() => {
-        setInterval(() => {
-            dispatch(popularTimerStart());
-        }, 1000)
+        if(!timerStart) {
+            setInterval(() => {
+                dispatch(popularTimerStart());
+            }, 1000)
+        }
     }, [])
 
     return (

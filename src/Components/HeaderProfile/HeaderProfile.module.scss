@@ -51,6 +51,13 @@
         color: #E2E4E9;
         margin-bottom: 8px;
         text-align: left;
+        display: flex;
+
+        svg {
+          width: 25px;
+          margin-left: 5px;
+          align-items: center;
+        }
       }
 
       .email {

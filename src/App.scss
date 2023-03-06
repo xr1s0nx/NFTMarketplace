@@ -56,12 +56,12 @@ button {
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
+  position: relative;
 }
 
 .appWrap {
   display: flex;
   align-items: flex-start;
-  //justify-content: space-between;
   padding-top: 45px;
 
 
@@ -70,11 +70,16 @@ button {
   }
 
   .main {
-    transition: .3s ease-out;
     margin: 0 32px;
+    transition: .3s;
+    width: 100%;
   }
 
   .profile {
     width: 368px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    overflow: hidden;
   }
 }

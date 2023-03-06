@@ -21,7 +21,7 @@ function Header() {
                 {!!Object.keys(profile).length && isAuth ?
                     <div className={styles.profile}>
                         <HeaderButtons balance={profile.balance}/>
-                        <HeaderProfile avatarUrl={profile.imgUrl} email={profile.email} username={profile.username}/>
+                        <HeaderProfile/>
                     </div>
                     : <button onClick={() => dispatch(toggleSingModalOpenStatus())} className={styles.signBtn}>Sign In</button>}
             </div>

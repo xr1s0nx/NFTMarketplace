@@ -18,6 +18,7 @@ import LoadingScreen from "./Components/LoadingScreen/LoadingScreen";
 import {motion} from "framer-motion";
 import {onSnapshot} from 'firebase/firestore';
 import ChangeAvatarModal from "./Components/ChangeAvatarModal/ChangeAvatarModal";
+import Seller from "./Components/Seller/Seller";
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
                               <Header/>
                               <Routes>
                                   <Route element={<Main/>} path={'/'}/>
+                                  <Route element={<Seller/>} path={'/seller'}/>
                               </Routes>
                           </div>
                           <AnimatePresence mode={'wait'}>

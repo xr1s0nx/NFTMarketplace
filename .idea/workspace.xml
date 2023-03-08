@@ -5,21 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21350c7-5f07-40b6-9219-10d63c6658d2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Seller/Seller.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Seller/Seller.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/TopSellers/Skeleton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProfileCard/ProfileCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/LoadingScreen/LoadingScreen.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/LoadingScreen/LoadingScreen.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SignModal/SignModal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignModal/SignModal.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SignModal/SignModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignModal/SignModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TopSellers/TopSellers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +33,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="autoscrollToSource" value="true" />
   </component>
   <component name="ProjectId" id="2LjgDUNno8myhbeYIZYvypktU5U" />
   <component name="ProjectLevelVcsManager">
@@ -106,11 +106,25 @@
       <workItem from="1677958048057" duration="7354000" />
       <workItem from="1678024093590" duration="1312000" />
       <workItem from="1678031162931" duration="7303000" />
-      <workItem from="1678044774296" duration="9310000" />
+      <workItem from="1678044774296" duration="9647000" />
+      <workItem from="1678212433015" duration="175000" />
+      <workItem from="1678212628725" duration="1000" />
+      <workItem from="1678217011871" duration="10082000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

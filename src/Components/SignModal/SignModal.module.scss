@@ -54,6 +54,18 @@
       }
     }
 
+    .error {
+      padding: 10px;
+      border: 1px solid red;
+      margin-bottom: 20px;
+      border-radius: 10px;
+
+      .errorText {
+        color: #b20404;
+        font-size: 15px;
+      }
+    }
+
     .input {
       width: 100%;
       background: #2E357B;

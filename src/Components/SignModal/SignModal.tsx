@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {
     changeConfirmPasswordInput,
     changeLoginInput,
-    changePasswordInput,
+    changePasswordInput, setError,
     toggleSingModalOpenStatus
 } from "../../Redux/Slices/MainSlice";
 import {RootState} from "../../Redux/store";
@@ -26,7 +26,7 @@ function SignModal() {
     const [nowPage, changePage] = React.useState('SignIn');
     const [width, changeWidth] = React.useState(0)
 
-    const {loginInput, passwordInput, confirmPasswordInput} = useSelector((state: RootState) => state.MainSlice)
+    const {loginInput, passwordInput, confirmPasswordInput, errorStatus, errorText} = useSelector((state: RootState) => state.MainSlice)
 
     const SignInRef: any = React.useRef();
     const SignUpRef: any = React.useRef();
@@ -35,6 +35,14 @@ function SignModal() {
         changeWidth(SignInRef.current.offsetWidth);
     }, [])
 
+    React.useEffect(() => {
+        dispatch(setError({
+            status: false,
+            text: ''
+        }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [nowPage])
+
     const changeTab = (tab: string) => {
         if(tab === 'SignIn') {
             changeWidth(SignInRef.current.offsetWidth);
@@ -42,6 +50,9 @@ function SignModal() {
             changeWidth(SignUpRef.current.offsetWidth);
         }
         changePage(tab)
+        dispatch(changeConfirmPasswordInput(''))
+        dispatch(changePasswordInput(''))
+        dispatch(changeLoginInput(''))
     }
 
     const SignIn = async () => {
@@ -50,11 +61,18 @@ function SignModal() {
                 dispatch(toggleSingModalOpenStatus());
                 window.location.reload();
             } catch (e: any) {
-                console.log(e.message === 'Firebase: Error (auth/email-already-in-use).' ? 'email already in use' : e.message);
+                dispatch(setError(e.message === 'Firebase: Error (auth/user-not-found).' ? {status: true, text: 'User not found!'} : {status: false, text: ''}));
+                console.clear()
             }
     }
 
     const SignUp = async () => {
+        if(passwordInput !== confirmPasswordInput) {
+            dispatch(setError({
+                status: true,
+                text: 'Passwords must match'
+            }))
+        }
         try {
             const user = await createUserWithEmailAndPassword(auth, loginInput, passwordInput);
             if(user !== null) {
@@ -85,7 +103,6 @@ function SignModal() {
                 window.location.reload();
             }
         } catch (e: any) {
-            console.log(e.message === 'Firebase: Error (auth/email-already-in-use).' ? 'email already in use' : e.message);
         }
     }
 
@@ -106,6 +123,15 @@ function SignModal() {
                 <div className={styles.underLineWrap}>
                     <span style={nowPage === 'SignIn' ? {marginLeft: '0px', width: `${width}px`} : {marginLeft: `calc(100% - ${width}px)`, width: `${width}px`}} className={styles.activeLine}></span>
                 </div>
+                {
+                    errorStatus ?
+                        <div className={styles.error}>
+                            <p className={styles.errorText}>{errorText}</p>
+                        </div>
+                        :
+                        null
+                }
+
                 <AnimatePresence mode="wait" initial={false}>
                     {nowPage === 'SignIn' ?
                         <motion.div

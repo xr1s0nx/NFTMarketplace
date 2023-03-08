@@ -48,7 +48,7 @@ interface MainState {
     }[] | undefined,
     topSellers: {
         username: string,
-        id: number,
+        id: string,
         avatarUrl: string,
         verified: boolean,
         totalSellBalance: number,
@@ -79,6 +79,8 @@ interface MainState {
     logoutModalStatus: boolean,
     newUsername?: string,
     AvatarModalStatus: boolean,
+    errorText: string,
+    errorStatus: boolean
 }
 
 const initialState: MainState = {
@@ -277,6 +279,8 @@ const initialState: MainState = {
     confirmPasswordInput: '',
     logoutModalStatus: false,
     timersStart: false,
+    errorText: '',
+    errorStatus: false,
 }
 
 
@@ -405,13 +409,17 @@ export const mainSlice = createSlice({
         },
         setTopSellers: (state, action: PayloadAction<{
             username: string,
-            id: number,
+            id: string,
             avatarUrl: string,
             verified: boolean,
             totalSellBalance: number,
             admin: boolean
         }[]>) => {
             state.topSellers = [...action.payload]
+        },
+        setError: (state, action: PayloadAction<{ status: boolean, text: string }>) => {
+            state.errorText = action.payload.text;
+            state.errorStatus = action.payload.status;
         }
     },
 })
@@ -425,7 +433,7 @@ export const {
     setUser, setAuth,
     changeLogoutModalStatus, setNoticeStatus,
     changeNewUsername, changeAvatarModalStatus,
-    setTopSellers
+    setTopSellers, setError
     } = mainSlice.actions
 
 export default mainSlice.reducer

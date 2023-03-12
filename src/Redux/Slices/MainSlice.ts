@@ -33,6 +33,7 @@ interface MainState {
         readNotice?: {From: string, Message: string}[],
         verified?: boolean,
         admin?: boolean,
+        followed?: string[],
 
     },
     hasNotice: boolean
@@ -319,59 +320,6 @@ export const mainSlice = createSlice({
                 }
             }
         },
-        bidsTimerStart: (state) => {
-            if(state.hotBids) {
-               state.hotBids.map(item => {
-                   if(item.time.seconds - 1 <= 0) {
-                       if(item.time.minutes - 1 < 0) {
-                           if(item.time.hours - 1 < 0) {
-                               item.time = {
-                                   hours: 0,
-                                   minutes: 0,
-                                   seconds: 0,
-                               }
-                           } else {
-                               item.time.hours --
-                               item.time.minutes = 59
-                           }
-                       } else {
-                           item.time.minutes --
-                           item.time.seconds = 59
-                       }
-                   } else {
-                       item.time.seconds --
-                   }
-                   return null;
-               })
-            }
-            state.timersStart = true;
-        },
-        popularTimerStart: (state) => {
-            if(state.popularNFTS) {
-                state.popularNFTS.map(item => {
-                    if(item.timeRemain.seconds - 1 <= 0) {
-                        if(item.timeRemain.minutes - 1 < 0) {
-                            if(item.timeRemain.hours - 1 < 0) {
-                                item.timeRemain = {
-                                    hours: 0,
-                                    minutes: 0,
-                                    seconds: 0,
-                                }
-                            } else {
-                                item.timeRemain.hours --
-                                item.timeRemain.minutes = 59
-                            }
-                        } else {
-                            item.timeRemain.minutes --
-                            item.timeRemain.seconds = 59
-                        }
-                    } else {
-                        item.timeRemain.seconds --
-                    }
-                    return null;
-                })
-            }
-        },
         profileCardOpenToggle: (state) => {
             state.profileCardOpen = !state.profileCardOpen;
         },
@@ -426,8 +374,7 @@ export const mainSlice = createSlice({
 
 export const {
     changeSearchValue, likeBid,
-    unlikeBid, bidsTimerStart,
-    popularTimerStart, profileCardOpenToggle,
+    unlikeBid, profileCardOpenToggle,
     toggleSingModalOpenStatus, changeLoginInput,
     changePasswordInput, changeConfirmPasswordInput,
     setUser, setAuth,

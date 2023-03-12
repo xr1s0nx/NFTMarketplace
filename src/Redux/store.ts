@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import MainSlice from "./Slices/MainSlice";
+import animeSlice from "./Slices/AnimeSlice";
 
 export const store = configureStore({
     reducer: {
-        MainSlice
+        MainSlice,
+        animeSlice
     },
 })
 

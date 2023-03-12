@@ -32,19 +32,6 @@ function HeaderButtons({balance}: {balance?: number}) {
 
     return (
         <div className={styles.buttons}>
-            <div className={styles.balance}>
-                <span className={styles.icon}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
-                        <path d="M3 10.0198L8.0329 16.9935V12.9803L3 10.0198Z" fill="#F8FCFF"/>
-                        <path d="M8.03296 17.0593L13.0001 10.0198L8.03296 13.0132V17.0593Z" fill="#A5D7FD"/>
-                        <path d="M8 7.94081V11.9408L11 9.6733L8 7.94081Z" fill="#4EB2FF"/>
-                        <path d="M8 0.940857V6.86191L3 9.16454L8 0.940857Z" fill="#F8FCFF"/>
-                        <path d="M13 9.09871L8 6.86186V0.940811L13 9.09871Z" fill="#A5D7FD"/>
-                        <path d="M5 9.72425L8 11.9408L7.98039 7.94081L5 9.72425Z" fill="#9DD4FF"/>
-                    </svg>
-                </span>
-                <p className={styles.balanceText}>{balance} ETH</p>
-            </div>
             <button className={hasNotice ? `${styles.notification} ${styles.hasNotice}` : styles.notification} onClick={openNoticeMenu}>
                 <div className={styles.icon}>
                     <span className={styles.dot}></span>
@@ -74,9 +61,6 @@ function HeaderButtons({balance}: {balance?: number}) {
                             : null
                     }
                 </div>
-            </button>
-            <button className={styles.connect}>
-                Connect Wallet
             </button>
         </div>
     );

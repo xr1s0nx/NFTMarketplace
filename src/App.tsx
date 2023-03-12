@@ -19,6 +19,7 @@ import {motion} from "framer-motion";
 import {onSnapshot} from 'firebase/firestore';
 import ChangeAvatarModal from "./Components/ChangeAvatarModal/ChangeAvatarModal";
 import Seller from "./Components/Seller/Seller";
+import AllAnime from "./Pages/AllAnime";
 
 function App() {
 
@@ -75,6 +76,7 @@ function App() {
                               <Routes>
                                   <Route element={<Main/>} path={'/'}/>
                                   <Route element={<Seller/>} path={'/seller'}/>
+                                  <Route element={<AllAnime/>} path={'/all-anime'}/>
                               </Routes>
                           </div>
                           <AnimatePresence mode={'wait'}>

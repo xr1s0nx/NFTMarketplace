@@ -5,11 +5,6 @@ import logo from '../../assets/img/logo.svg'
 import main from '../../assets/img/Icon - Home.svg';
 import messages from '../../assets/img/Icon - Message.svg';
 import cart from '../../assets/img/Icon - Buy.svg';
-import analytics from '../../assets/img/Icon - Activity.svg';
-import history from '../../assets/img/Icon - Time Circle.svg';
-import wallet from '../../assets/img/Icon - Wallet.svg';
-import friends from '../../assets/img/Icon - Friends.svg';
-import settings from '../../assets/img/Icon - Settings.svg';
 import logout from '../../assets/img/Icon - Log Out.svg';
 import {changeLogoutModalStatus} from "../../Redux/Slices/MainSlice";
 import {useDispatch, useSelector} from "react-redux";
@@ -20,10 +15,10 @@ function Navbar() {
     const navLinks = [
         {type: 'link', img: main, link: '/'},
         {type: 'link', img: messages, link: '/messages'},
-        {type: 'link', img: cart, link: '/cart'},
+        {type: 'link', img: cart, link: '/all-anime'},
     ]
 
-    const [hideBar, changeVisible] = React.useState(true);
+    const [hideBar, changeVisible] = React.useState(false);
 
     const {isAuth} = useSelector((state: RootState) => state.MainSlice);
 

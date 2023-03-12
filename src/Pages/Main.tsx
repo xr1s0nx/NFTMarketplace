@@ -1,5 +1,5 @@
 import React from 'react';
-import PopularNfts from "../Components/PopularNfts/PopularNfts";
+import PopularCollections from "../Components/PopularCollections/PopularCollections";
 import TopSellers from "../Components/TopSellers/TopSellers";
 import {useSelector} from "react-redux";
 import {RootState} from "../Redux/store";
@@ -12,10 +12,9 @@ function Main() {
     return (
         <div className={'main-page'}>
             {popularNfts ?
-                <PopularNfts/>
+                <PopularCollections/>
                 : null
             }
-            <TopSellers/>
             <HotBids/>
         </div>
     );

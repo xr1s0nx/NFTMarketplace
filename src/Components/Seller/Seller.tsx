@@ -1,41 +1,67 @@
 import React, {useEffect, useState} from 'react';
 import qs from 'qs';
 import {useLocation} from "react-router-dom";
-import {doc, getDoc} from "firebase/firestore";
+import {doc, getDoc, onSnapshot, updateDoc} from "firebase/firestore";
 import {db} from "../../firebase";
 import styles from './Seller.module.scss';
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import {useSelector} from "react-redux";
+import {RootState} from "../../Redux/store";
 
 function Seller() {
 
     const location = useLocation();
 
+    const {followed, uid} = useSelector((state: RootState) => state.MainSlice.profile);
+    const profile = useSelector((state: RootState) => state.MainSlice.profile);
+
     interface UserTypes {
         username: string,
         imgUrl: string,
         admin: boolean,
-        verified: boolean
+        verified: boolean,
+        uid: string,
     }
 
     const [user, setCurrentUser] = useState<UserTypes>();
     const [loading, setLoading] = useState(true);
+    const [follow, setFollow] = useState(false);
 
     useEffect(() => {
         setLoading(true)
         const log = qs.parse(location.search.substr(1));
+        followed?.map(item => {
+            if(item === log.id) {
+                setFollow(true);
+            }
+        })
         const getUser = async () => {
-            const user = await getDoc(doc(db, 'Users', `${log.id}`))
-            setCurrentUser({
-                username: user.data()?.username,
-                imgUrl: user.data()?.imgUrl,
-                admin: user.data()?.admin,
-                verified: user.data()?.verefied
+            await onSnapshot(doc(db, 'Users', `${log.id}`), (user) => {
+                setCurrentUser({
+                    username: user.data()?.username,
+                    imgUrl: user.data()?.imgUrl,
+                    admin: user.data()?.admin,
+                    verified: user.data()?.verefied,
+                    uid: user.data()?.uid,
+                })
             })
             setLoading(false);
         }
 
         getUser();
-    }, [location])
+    }, [location, followed])
+
+    const FollowUser = async () => {
+        const userDoc = doc(db, 'Users', `${uid}`);
+        if(follow) {
+            await updateDoc(userDoc, {...profile, followed: followed?.filter(item => item !== user?.uid)});
+            setFollow(false);
+        } else if(uid && followed !== undefined) {
+            await updateDoc(userDoc, {...profile, followed: [...followed, user?.uid]});
+            setFollow(true);
+        }
+    }
+
 
     return (
         <>
@@ -55,6 +81,9 @@ function Seller() {
                                 null
                         }
                     </div>
+                    <button className={styles.follow} onClick={FollowUser}>{
+                        follow ? 'Unfollow' : 'Follow'
+                    }</button>
                 </div>
 
             }

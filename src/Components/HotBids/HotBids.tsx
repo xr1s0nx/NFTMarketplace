@@ -50,11 +50,9 @@ function HotBids() {
             <div className={styles.bids}>
                 {anime && !loading ?
                     anime.map((item, i) => {
-                        if(i < 5) {
                             return (
                                 <AnimeCard key={item.id} id={item.id} image={item.image} title={item.title}/>
                             )
-                        }
                     })
                     : <>
                         <Skeleton/>

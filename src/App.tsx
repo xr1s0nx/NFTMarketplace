@@ -20,6 +20,7 @@ import {onSnapshot} from 'firebase/firestore';
 import ChangeAvatarModal from "./Components/ChangeAvatarModal/ChangeAvatarModal";
 import Seller from "./Components/Seller/Seller";
 import AllAnime from "./Pages/AllAnime";
+import Anime from "./Pages/Anime";
 
 function App() {
 
@@ -71,12 +72,13 @@ function App() {
                           <div className="nav">
                               <Navbar/>
                           </div>
-                          <div className="main" style={profileCardOpen ? {maxWidth: '1340px'} : {maxWidth: '1740px'}}>
+                          <div className="main" style={profileCardOpen ? {maxWidth: '1340px'} : {maxWidth: '1660px', marginLeft: '70px'}}>
                               <Header/>
                               <Routes>
                                   <Route element={<Main/>} path={'/'}/>
                                   <Route element={<Seller/>} path={'/seller'}/>
                                   <Route element={<AllAnime/>} path={'/all-anime'}/>
+                                  <Route element={<Anime/>} path={'/anime'}/>
                               </Routes>
                           </div>
                           <AnimatePresence mode={'wait'}>

@@ -32,18 +32,29 @@ function AnimeCatalog() {
     }, [])
 
     useEffect(() => {
-        getAnime(page);
-    }, [page])
+        if(anime.length === 0) {
+            for (let i = 1; i <= 2; i++) {
+                getAnime(i);
+            }
+        }
+    }, [])
 
     return (
-        <div className={styles.catalog}>
-            {anime.map(item => {
-                return (
-                    <AnimeCard key={item.id} id={item.id} image={item.image} title={item.title}/>
-                )
-            })}
-            <button className={styles.more} onClick={() => setPage(page + 1)}>More</button>
-        </div>
+        <>
+            <div className={styles.catalog}>
+                {anime.map((item, i) => {
+                    return (
+                        <AnimeCard key={item.id + i} id={item.id} image={item.image} title={item.title}/>
+                    )
+                })}
+            </div>
+            <button className={styles.more} onClick={async () => {
+                await setPage(page + 1);
+                getAnime(page);
+            }}>More</button>
+        </>
+
+
     );
 }
 

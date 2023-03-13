@@ -82,4 +82,14 @@ button {
     right: 0;
     overflow: hidden;
   }
+
+  .allAnime-page {
+    margin-top: 80px;
+    > h1 {
+      font-size: 30px;
+      padding: 25px 20px;
+      background: linear-gradient(162.34deg, #161A42 22.61%, rgba(22, 26, 66, 0) 118.29%);
+      border-radius: 20px;
+    }
+  }
 }

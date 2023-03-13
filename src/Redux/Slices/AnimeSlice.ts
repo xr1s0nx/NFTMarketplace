@@ -12,6 +12,21 @@ export interface anime {
     image?: string,
 }
 
+export interface fullAnimeInfo {
+    id?: string,
+    title?: string,
+    genres?: string[],
+    totalEpisodes?: number,
+    releaseDate?: string,
+    description?: string,
+    image?: string,
+    status?: string,
+    episodes?: {
+        id: string,
+        number: number,
+    }
+}
+
 export interface CounterState {
     anime: anime[],
     popularCollections?: {
@@ -24,6 +39,7 @@ export interface CounterState {
         }
     }[],
     popularAnime: anime[];
+    currentAnime: fullAnimeInfo,
 }
 
 const initialState: CounterState = {
@@ -49,6 +65,7 @@ const initialState: CounterState = {
     ],
     anime: [],
     popularAnime: [],
+    currentAnime: {}
 }
 
 export const animeSlice = createSlice({
@@ -62,11 +79,14 @@ export const animeSlice = createSlice({
         },
         setPopularAnime: (state, action: PayloadAction<anime[]>) => {
             state.popularAnime = action.payload;
+        },
+        setCurrentAnime: (state, action: PayloadAction<fullAnimeInfo>) => {
+            state.currentAnime = action.payload;
         }
     },
 })
 
-export const { setAnime, setPopularAnime
+export const { setAnime, setPopularAnime, setCurrentAnime
 } = animeSlice.actions
 
 export default animeSlice.reducer

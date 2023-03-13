@@ -5,33 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21350c7-5f07-40b6-9219-10d63c6658d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCatd.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HotBids/Skeleton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/PopularCollections/PopularCollections.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/AllAnime.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/Slices/AnimeSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Anime.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderButtons/HeaderButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderProfile/HeaderProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCatd.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCatd.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HotBids/HotBids.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Navbar/Navbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopularCollections/PopularNfts.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PopularNfts/PopularNfts.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Seller/Seller.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Seller/Seller.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/Icon - Buy.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/Icon - Buy.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AllAnime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AllAnime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Slices/AnimeSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/AnimeSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +65,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\artem\OneDrive\Documents\react-nft-market\src\Components\AnimeItem" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -130,7 +123,7 @@
       <workItem from="1678480340202" duration="588000" />
       <workItem from="1678486260320" duration="3000" />
       <workItem from="1678486482514" duration="473000" />
-      <workItem from="1678618464026" duration="13638000" />
+      <workItem from="1678618464026" duration="29505000" />
     </task>
     <servers />
   </component>

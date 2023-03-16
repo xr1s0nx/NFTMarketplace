@@ -22,7 +22,7 @@ interface MainState {
         balance?: number,
         username?: string,
         imgUrl?: string | null,
-        likeBids?: number[],
+        likeBids?: string[],
         stats?: {
             asset: number,
             followers: number,
@@ -34,7 +34,8 @@ interface MainState {
         verified?: boolean,
         admin?: boolean,
         followed?: string[],
-
+        watched?: string[],
+        watchNow?: string[],
     },
     hasNotice: boolean
     popularNFTS: {
@@ -56,7 +57,7 @@ interface MainState {
         admin: boolean
     }[] | undefined,
     hotBids?: {
-        id: number,
+        id: string,
         time: {
             hours: number,
             minutes: number,
@@ -117,164 +118,6 @@ const initialState: MainState = {
     ],
     topSellers: [
     ],
-    hotBids: [
-        {
-            id: 1,
-            time: {
-                hours: 0,
-                minutes: 2,
-                seconds: 7
-            },
-            likes: 232,
-            title: 'Stretch Of Time',
-            price: 0.045,
-            topBuyers: [
-                {
-                    id: 10,
-                    avatarUrl: 'https://i.pinimg.com/736x/80/17/86/80178693d1d0c7e0ec688707b02ecc0b.jpg'
-                },
-                {
-                    id: 11,
-                    avatarUrl: 'https://i.pinimg.com/originals/35/cc/60/35cc6077af03da9d88bf14d5de6004f5.jpg'
-                },
-                {
-                    id: 12,
-                    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdL5VJd4EhQXRR-_HaJZkfE5CEz0zpKggDFw&usqp=CAU'
-                }
-            ],
-            imageUrl: hotBids1
-        },
-        {
-            id: 2,
-            time: {
-                hours: 1,
-                minutes: 35,
-                seconds: 45
-            },
-            likes: 232,
-            title: 'Arcade Land',
-            price: 0.045,
-            topBuyers: [
-                {
-                    id: 10,
-                    avatarUrl: 'https://i.pinimg.com/736x/80/17/86/80178693d1d0c7e0ec688707b02ecc0b.jpg'
-                },
-                {
-                    id: 11,
-                    avatarUrl: 'https://i.pinimg.com/originals/35/cc/60/35cc6077af03da9d88bf14d5de6004f5.jpg'
-                },
-                {
-                    id: 12,
-                    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdL5VJd4EhQXRR-_HaJZkfE5CEz0zpKggDFw&usqp=CAU'
-                }
-            ],
-            imageUrl: hotBids2
-        },
-        {
-            id: 3,
-            time: {
-                hours: 2,
-                minutes: 32,
-                seconds: 7
-            },
-            likes: 232,
-            title: 'Shinsekai Portal',
-            price: 0.045,
-            topBuyers: [
-                {
-                    id: 10,
-                    avatarUrl: 'https://i.pinimg.com/736x/80/17/86/80178693d1d0c7e0ec688707b02ecc0b.jpg'
-                },
-                {
-                    id: 11,
-                    avatarUrl: 'https://i.pinimg.com/originals/35/cc/60/35cc6077af03da9d88bf14d5de6004f5.jpg'
-                },
-                {
-                    id: 12,
-                    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdL5VJd4EhQXRR-_HaJZkfE5CEz0zpKggDFw&usqp=CAU'
-                }
-            ],
-            imageUrl: hotBids3
-        },
-        {
-            id: 4,
-            time: {
-                hours: 2,
-                minutes: 32,
-                seconds: 7
-            },
-            likes: 232,
-            title: 'Paper Cut',
-            price: 0.045,
-            topBuyers: [
-                {
-                    id: 10,
-                    avatarUrl: 'https://i.pinimg.com/736x/80/17/86/80178693d1d0c7e0ec688707b02ecc0b.jpg'
-                },
-                {
-                    id: 11,
-                    avatarUrl: 'https://i.pinimg.com/originals/35/cc/60/35cc6077af03da9d88bf14d5de6004f5.jpg'
-                },
-                {
-                    id: 12,
-                    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdL5VJd4EhQXRR-_HaJZkfE5CEz0zpKggDFw&usqp=CAU'
-                }
-            ],
-            imageUrl: hotBids4
-        },
-        {
-            id: 5,
-            time: {
-                hours: 2,
-                minutes: 32,
-                seconds: 7
-            },
-            likes: 232,
-            title: 'Cyber Brokers',
-            price: 0.045,
-            topBuyers: [
-                {
-                    id: 10,
-                    avatarUrl: 'https://i.pinimg.com/736x/80/17/86/80178693d1d0c7e0ec688707b02ecc0b.jpg'
-                },
-                {
-                    id: 11,
-                    avatarUrl: 'https://i.pinimg.com/originals/35/cc/60/35cc6077af03da9d88bf14d5de6004f5.jpg'
-                },
-                {
-                    id: 12,
-                    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdL5VJd4EhQXRR-_HaJZkfE5CEz0zpKggDFw&usqp=CAU'
-                }
-            ],
-            imageUrl: hotBids5
-        },
-        {
-            id: 6,
-            time: {
-                hours: 2,
-                minutes: 32,
-                seconds: 7
-            },
-            likes: 232,
-            title: 'Akuma Origins',
-            price: 0.045,
-            topBuyers: [
-                {
-                    id: 10,
-                    avatarUrl: 'https://i.pinimg.com/736x/80/17/86/80178693d1d0c7e0ec688707b02ecc0b.jpg'
-                },
-                {
-                    id: 11,
-                    avatarUrl: 'https://i.pinimg.com/originals/35/cc/60/35cc6077af03da9d88bf14d5de6004f5.jpg'
-                },
-                {
-                    id: 12,
-                    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdL5VJd4EhQXRR-_HaJZkfE5CEz0zpKggDFw&usqp=CAU'
-                }
-            ],
-            imageUrl: hotBids6
-        }
-    ],
     loginInput: '',
     passwordInput: '',
     confirmPasswordInput: '',
@@ -292,7 +135,7 @@ export const mainSlice = createSlice({
         changeSearchValue: (state, action:PayloadAction<string>) => {
             state.searchValue = action.payload;
         },
-        likeBid: (state, action:PayloadAction<number>) => {
+        likeBid: (state, action:PayloadAction<string>) => {
             if(!!Object.keys(state.profile).length && state.hotBids) {
                 state.hotBids.map(item => {
                     if(item.id === action.payload) {
@@ -307,7 +150,7 @@ export const mainSlice = createSlice({
                 state.SignModalOpen = true;
             }
         },
-        unlikeBid: (state, action:PayloadAction<number>) => {
+        unlikeBid: (state, action:PayloadAction<string>) => {
             if(state.profile && state.hotBids) {
                 state.hotBids.map(item => {
                     if(item.id === action.payload) {

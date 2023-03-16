@@ -1,8 +1,10 @@
 .bid {
   width: 300px;
   display: block;
-  margin: 0 15px;
-  margin-bottom: 40px;
+  margin: 0 15px 40px;
+  background: #161a42;
+  border-radius: 15px;
+  position: relative;
   .top {
     display: flex;
     align-items: center;
@@ -17,18 +19,49 @@
       }
     }
 
-    .likesBlock {
+
+  }
+
+  .likesBlock {
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    padding-left: 10px;
+    margin: 20px 0;
+    position: absolute;
+    top: -5px;
+    right: 10px;
+
+    button {
       display: flex;
       align-items: center;
-      position: relative;
-      z-index: 100;
-      button {
-        display: flex;
-        align-items: center;
-        margin-left: 6px;
+      margin-left: 6px;
+      background: #161a42;
+      padding: 10px;
+      border-radius: 10px;
+      transition: .3s linear;
+      opacity: 0;
+
+      &.like {
+        opacity: 1;
       }
     }
   }
+
+  &:hover {
+    .likesBlock {
+      button {
+        opacity: 1;
+      }
+    }
+    .bidImage {
+      img {
+        transform: scale(1.02);
+      }
+    }
+
+  }
+
   .bidImage {
     position: relative;
     z-index: 10;
@@ -45,11 +78,7 @@
       display: block;
     }
 
-    &:hover {
-      img {
-        transform: scale(1.05);
-      }
-    }
+
   }
   .bidTitle {
     font-family: 'Poppins';
@@ -57,10 +86,11 @@
     font-size: 14px;
     line-height: 24px;
     color: #FAFAFB;
-    margin-bottom: 2px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
+    padding: 0 10px;
+    margin-bottom: 20px;
   }
   .bottom {
     display: flex;

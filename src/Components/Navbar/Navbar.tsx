@@ -4,7 +4,8 @@ import {NavLink} from "react-router-dom";
 import logo from '../../assets/img/logo.svg'
 import main from '../../assets/img/Icon - Home.svg';
 import messages from '../../assets/img/Icon - Message.svg';
-import cart from '../../assets/img/Icon - Buy.svg';
+import watch from '../../assets/img/watch.svg';
+import friends from '../../assets/img/Icon - Friends.svg';
 import logout from '../../assets/img/Icon - Log Out.svg';
 import {changeLogoutModalStatus} from "../../Redux/Slices/MainSlice";
 import {useDispatch, useSelector} from "react-redux";
@@ -15,7 +16,8 @@ function Navbar() {
     const navLinks = [
         {type: 'link', img: main, link: '/'},
         {type: 'link', img: messages, link: '/messages'},
-        {type: 'link', img: cart, link: '/all-anime'},
+        {type: 'link', img: watch, link: '/all-anime'},
+        {type: 'link', img: friends, link: '/friends'},
     ]
 
     const [hideBar, changeVisible] = React.useState(false);
@@ -25,7 +27,7 @@ function Navbar() {
     const dispatch = useDispatch();
 
     return (
-        <div className={styles.navBar} style={{maxHeight: hideBar ? '140px' : '746px'}}>
+        <div className={styles.navBar} style={{maxHeight: hideBar ? '140px' : '850px'}}>
             <button onClick={() => {
                 changeVisible(!hideBar);
             }} className={styles.hideBtn} style={{transform: hideBar ? 'rotate(180deg)' : 'rotate(0deg)'}}>

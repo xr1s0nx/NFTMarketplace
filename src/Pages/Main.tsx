@@ -1,6 +1,5 @@
 import React from 'react';
 import PopularCollections from "../Components/PopularCollections/PopularCollections";
-import TopSellers from "../Components/TopSellers/TopSellers";
 import {useSelector} from "react-redux";
 import {RootState} from "../Redux/store";
 import HotBids from "../Components/HotBids/HotBids";

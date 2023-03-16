@@ -5,21 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21350c7-5f07-40b6-9219-10d63c6658d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/Anime.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCatd.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeCard/AnimeCatd.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeCatalog/AnimeCatalog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HotBids/HotBids.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnimeItem/AnimeItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ChangeAvatarModal/ChangeAvatarModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ChangeAvatarModal/ChangeAvatarModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderSearch/HeaderSearch.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HotBids/HotBids.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/PopularCollections/PopularCollections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/PopularCollections/PopularCollections.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Seller/Seller.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Seller/Seller.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/AllAnime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AllAnime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Anime.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Anime.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/Slices/AnimeSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/AnimeSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/MainSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/declaration.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/declaration.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +130,11 @@
       <workItem from="1678480340202" duration="588000" />
       <workItem from="1678486260320" duration="3000" />
       <workItem from="1678486482514" duration="473000" />
-      <workItem from="1678618464026" duration="29505000" />
+      <workItem from="1678618464026" duration="47597000" />
+      <workItem from="1678907279272" duration="2000" />
+      <workItem from="1678909730336" duration="1757000" />
+      <workItem from="1678978482150" duration="15538000" />
+      <workItem from="1678998954219" duration="1310000" />
     </task>
     <servers />
   </component>

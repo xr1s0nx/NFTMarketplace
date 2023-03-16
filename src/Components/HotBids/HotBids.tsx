@@ -11,8 +11,6 @@ import AnimeCard from "../AnimeCard/AnimeCard";
 function HotBids() {
 
     const anime = useSelector((state: RootState) => state.animeSlice.popularAnime);
-    const profile = useSelector((state: RootState) => state.MainSlice.profile);
-    const [page, setPage] = useState(2);
     const [loading, setLoading] = useState(true);
 
     const dispatch = useDispatch();
@@ -22,7 +20,7 @@ function HotBids() {
         if(anime.length === 0) {
             const data = async () => {
                 try {
-                    const {data} = await axios.get(url, {params: {page}});
+                    const {data} = await axios.get(url, {params: {}});
                     dispatch(setPopularAnime([...data.results]));
                     setLoading(false);
                 } catch (e) {
@@ -32,6 +30,7 @@ function HotBids() {
             data()
         }
         setLoading(false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 

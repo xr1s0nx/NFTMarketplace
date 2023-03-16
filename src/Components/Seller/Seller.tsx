@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import qs from 'qs';
 import {useLocation} from "react-router-dom";
-import {doc, getDoc, onSnapshot, updateDoc} from "firebase/firestore";
+import {doc, onSnapshot, updateDoc} from "firebase/firestore";
 import {db} from "../../firebase";
 import styles from './Seller.module.scss';
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
@@ -34,6 +34,7 @@ function Seller() {
             if(item === log.id) {
                 setFollow(true);
             }
+            return 0;
         })
         const getUser = async () => {
             await onSnapshot(doc(db, 'Users', `${log.id}`), (user) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ChangeAvatarModal.module.scss';
 import {motion} from "framer-motion";
-import {changeAvatarModalStatus, toggleSingModalOpenStatus} from "../../Redux/Slices/MainSlice";
+import {changeAvatarModalStatus} from "../../Redux/Slices/MainSlice";
 import {useDispatch} from "react-redux";
 
 function ChangeAvatarModal() {

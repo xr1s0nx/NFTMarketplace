@@ -5,6 +5,12 @@
   transition: .3s linear;
   margin-top: 50px;
 
+  .notFound {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 40px;
+  }
 }
 
 .more {
@@ -22,4 +28,8 @@
   linear-gradient(93deg, #1fa2ff 0%, #12d8fa 50%, #a6ffcb 100%);
   border-radius: 12px;
   margin: 40px auto 40px;
+
+  img {
+    width: 50px;
+  }
 }

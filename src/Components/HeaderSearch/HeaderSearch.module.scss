@@ -10,6 +10,44 @@
   border: 2px solid #212554;
   transition: .3s linear;
 
+  .searchResults {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    max-width: 600px;
+    width: 150%;
+    height: 400px;
+    z-index: 101;
+    background: #161a42;
+    border: 2px solid #1fa2ff;
+    border-radius: 15px;
+    overflow-y: auto;
+    padding: 20px;
+    overflow-x: hidden;
+
+    .notfound {
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .title {
+      margin-bottom: 30px;
+    }
+
+    .result {
+      display: flex;
+      margin-bottom: 20px;
+
+
+
+      img {
+        width: 100px;
+        border-radius: 15px;
+        margin-right: 20px;
+      }
+    }
+  }
+
   &:focus-within {
     border-color: rgba(31, 162, 255, 0.68);
   }

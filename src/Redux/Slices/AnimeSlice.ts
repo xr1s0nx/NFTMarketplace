@@ -6,7 +6,7 @@ import collection2 from '../../assets/img/demon-slayer-season-3.jpg';
 
 export interface anime {
     title?: string,
-    id: number,
+    id: string,
     episodes?: number,
     genres?: string[],
     image?: string,
@@ -15,6 +15,7 @@ export interface anime {
 export interface fullAnimeInfo {
     id?: string,
     title?: string,
+    otherName?: string,
     genres?: string[],
     totalEpisodes?: number,
     releaseDate?: string,
@@ -24,7 +25,7 @@ export interface fullAnimeInfo {
     episodes?: {
         id: string,
         number: number,
-    }
+    }[]
 }
 
 export interface CounterState {
@@ -75,6 +76,7 @@ export const animeSlice = createSlice({
         setAnime: (state, action: PayloadAction<anime[]>) => {
             action.payload.map(item => {
                 state.anime.push(item);
+                return 0;
             })
         },
         setPopularAnime: (state, action: PayloadAction<anime[]>) => {
@@ -82,11 +84,14 @@ export const animeSlice = createSlice({
         },
         setCurrentAnime: (state, action: PayloadAction<fullAnimeInfo>) => {
             state.currentAnime = action.payload;
-        }
+        },
+        clearAnime: (state) => {
+            state.anime = []
+}
     },
 })
 
-export const { setAnime, setPopularAnime, setCurrentAnime
+export const { setAnime, setPopularAnime, setCurrentAnime, clearAnime
 } = animeSlice.actions
 
 export default animeSlice.reducer

@@ -1,17 +1,12 @@
 import React from 'react';
 import styles from './PopularNfts.module.scss';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {RootState} from "../../Redux/store";
 import {NavLink} from "react-router-dom";
 
 function PopularCollections() {
 
     const popularCollections = useSelector((state: RootState) => state.animeSlice.popularCollections);
-    const dispatch = useDispatch();
-
-    React.useEffect(() => {
-
-    }, [])
 
     return (
         <div className={styles.popularNfts}>
